@@ -1,1 +1,1 @@
-# sub-reddiit
+# sub-reddit
