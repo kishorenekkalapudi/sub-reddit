@@ -13,16 +13,15 @@ export default function Display( {about}) {
   return (
     <div className={styles.about}>
         <div className={styles.header}>About Community </div>
-        <div className={styles.content}>
-            <p>{about?.public_description} </p>
+        <div className={styles.content}>{about?.public_description} 
         <div className={styles.members}>
             <div className={styles.box}>
-  <div className={styles.total}>{Math.round((about.subscribers/1000)*10)/10}K</div>
-                <div className={styles.text} >Members</div>
+                <div className={styles.total}>309k</div>
+                <p className={styles.text} >Members</p>
             </div>
 
-  <div className={styles.box}><div  className={styles.total}>{Math.round((about.active_user_count/1000)*10)/10}K</div>
-                <div className={styles.text} >Online</div>
+            <div className={styles.box}><div  className={styles.total}>9.7k</div>
+                <p className={styles.text} >Online</p>
             </div>
         </div>
         </div>

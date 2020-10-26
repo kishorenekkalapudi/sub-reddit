@@ -1,18 +1,15 @@
 import React, { Fragment } from "react";
-import Nav from "../../../../src/components/r/nav"
-import Layout from "../../../../src/components/common/layout"
 import {API_URL} from "../../../../src/components/const"
+import Layout from "../../../../src/components/r/post_layout"
 
 
 
 
 const MyComponent = (props) => {
   console.log(props);
-
   return (
    <Fragment>
-      <div>comments page</div>
-
+     <Layout type='comments' {...props}/>
    </Fragment>
 )};
 

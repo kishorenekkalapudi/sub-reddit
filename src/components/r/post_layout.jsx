@@ -1,10 +1,9 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import Grid from '@material-ui/core/Grid';
 import { makeStyles } from '@material-ui/core/styles';
-import Nav from '../r/nav'
-import About from './about';
+import {PostView} from '../common/postView'
+import {PostComments} from "../common/postComment";
 import Header from '../header'
-import SubHeader  from '../subHeader'
 
 
 const useStyles = makeStyles((theme) => ({
@@ -25,19 +24,16 @@ const Layout = (props) =>{
 
 return <div className={classes.root}>
 <Header/>
-{
-  (props.type==='user')?<Fragment></Fragment>:<SubHeader {...props}/>
-}
-
 <Grid container  xs={12} md={12}>
-    <Grid item xs={0} md={2}></Grid>
+    <Grid item  md={2}></Grid>
     <Grid item  xs={12} md={6} >
-    <Nav  path={props.path}/>
+    <PostView {...props[0].data.children[0].data} />
+    <PostComments {...props[1].data} />
+
     </Grid>
     <Grid item  xs={12} md={2} >
-        <About {...props}/>
     </Grid>
-    <Grid item xs={0} md={2}></Grid>
+    <Grid item  md={2}></Grid>
 
 </Grid>
 </div>

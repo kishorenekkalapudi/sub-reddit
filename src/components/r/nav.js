@@ -49,7 +49,8 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function ScrollableTabsButtonAuto() {
+export default function ScrollableTabsButtonAuto({path}) {
+
   const classes = useStyles();
   const [value, setValue] = React.useState(0);
 
@@ -77,16 +78,16 @@ export default function ScrollableTabsButtonAuto() {
         </Tabs>
       </AppBar>
       <TabPanel value={value} index={0}>
-        <Post sort=''/>
+        <Post path={path} sort=''/>
       </TabPanel>
       <TabPanel value={value} index={1}>
-      <Post sort='hot'/>
+      <Post path={path} sort='hot'/>
       </TabPanel>
       <TabPanel value={value} index={2}>
-      <Post sort='new'/>
+      <Post path={path} sort='new'/>
       </TabPanel>
       <TabPanel value={value} index={3}>
-      <Post sort='top'/>
+      <Post path={path} sort='top'/>
       </TabPanel>
 
     </div>

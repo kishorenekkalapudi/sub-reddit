@@ -1,0 +1,50 @@
+.about{
+    width: 100%;
+    margin: 0 20px 20px 20px; 
+    border: 1px solid rgb(204, 204, 204);
+    color: var(--newCommunityTheme-widgetColors-sidebarWidgetTextColor);
+
+}
+
+.header {
+    padding: 20px;
+    text-align: 'center';
+    color: #fff;
+      background-color: black;
+  }
+  .content{
+      padding: 10px ;
+      color: #333;
+  }
+  .members{
+    display: flex;
+    margin-bottom: 8px;
+    >*{
+        flex: auto;
+    }
+  
+  }
+  .box{
+    padding-right: 4px;
+  }
+  .total{
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 20px;
+  }
+  .text{font-size: 12px;
+    font-weight: 500;
+    line-height: 16px;
+    display: inline-block;
+    word-break: break-word;
+}
+.hr{
+    background-color: var(--newRedditTheme-line);
+    border: none;
+    height: 1px;
+    margin: 16px 0;
+}
+.created{
+
+}
+ 

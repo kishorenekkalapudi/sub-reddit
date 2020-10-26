@@ -1,0 +1,33 @@
+
+  .postWrapper{
+    display: grid;
+    grid-template-columns: 1fr 20fr;
+    grid-template-rows: 1fr;
+    gap: 0px 0px
+  }
+  .voting { 
+      grid-area: 1 / 1 / 2 / 3;
+      padding: 0 20px;
+     }
+.content { grid-area: 1 / 2 / 2 / 3 }
+.threadline{
+    border-right: 2px solid var(--newCommunityTheme-line);
+    display: block;
+    height: 100%;
+    width: 50%;
+}
+.replieComments{
+    color: rgba(0, 0, 0, 0.54);
+    font-size: 1rem;
+    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+    font-weight: 400;
+    line-height: 1.5;
+    letter-spacing: 0.00938em;
+    padding-right: 10px;
+    padding-bottom: 10px;
+}
+.comments{
+    font-size: 1.5em;
+    padding: .5em;
+    border-bottom:2px solid rgba(0, 0, 0, 0.54);
+}
