@@ -24,7 +24,7 @@ export default function SimpleCard({path,sort}) {
 
    const [posts,setPosts]=useState([])
    useEffect(()=>{
-       fetch(`http://localhost:3000/api${path}`)
+       fetch(`/api${path}`)
        .then(posts=>posts.json())
        .then((posts=>{
            console.log(posts.data.children);

@@ -13,6 +13,7 @@ import ArrowUpwardIcon from '@material-ui/icons/ArrowUpward';
 
 const useStyles = makeStyles((theme) => ({
     root: {
+      minWidth:320,
       flexGrow: 1,
     },
     paper: {
@@ -90,7 +91,7 @@ export const PostComments=({children})=>{
 
 
     return (
-    <Card style={{margin:'20px', border:'1px solid #ccc', paddingTop:'10px'}} className={classes.root}>
+    <Card style={{margin:'20px', border:'1px solid #ccc', paddingTop:'10px',minWidth:'280px'}} className={classes.root}>
        <div className={styles.comments}>Comments</div> 
   {comments}
 

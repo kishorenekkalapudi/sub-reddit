@@ -59,7 +59,7 @@ export default function ScrollableTabsButtonAuto({path}) {
   };
 
   return (
-    <div className={classes.root}>
+    <div className={classes.root} style={{minWidth:'310px'}}>
       <AppBar position="static" color="default">
         <Tabs
           value={value}

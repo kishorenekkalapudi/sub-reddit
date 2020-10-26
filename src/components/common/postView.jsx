@@ -20,7 +20,7 @@ var moment = require('moment');
 
 const useStyles = makeStyles({
   root: {
-    minWidth: 275
+    minWidth: 320
   },
   bullet: {
     display: 'inline-block',
@@ -51,7 +51,7 @@ export const PostView=({author, permalink, title, selftext_html, url,num_comment
     const classes = useStyles();
     const [vote, setVote]=useState(score)
     return (
-    <Card style={{margin:'20px', border:'1px solid #ccc'}} className={classes.root}>
+    <Card style={{margin:'20px', border:'1px solid #ccc', minWidth:'280px'}} className={classes.root}>
     <div className={styles.postWrapper}>
         <div className={styles.voting}>
             <div >
