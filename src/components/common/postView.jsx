@@ -1,4 +1,4 @@
-import React, { Fragment, useState, useEffect } from "react";
+import React, { useState } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import Card from "@material-ui/core/Card";
 import CardActions from "@material-ui/core/CardActions";
@@ -11,7 +11,6 @@ import ThumbUpAltIcon from "@material-ui/icons/ThumbUpAlt";
 import ThumbDownIcon from "@material-ui/icons/ThumbDown";
 import styles from "../postview.module.scss";
 import ChatBubbleOutlineIcon from "@material-ui/icons/ChatBubbleOutline";
-var moment = require("moment");
 
 const useStyles = makeStyles({
   root: {
@@ -61,9 +60,15 @@ export const PostView = ({
       <div className={styles.postWrapper}>
         <div className={styles.voting}>
           <div>
-            <ThumbUpAltIcon onClick={() => setVote(vote + 1)} />
+            <ThumbUpAltIcon
+              data-testid="up-arrow"
+              onClick={() => setVote(vote + 1)}
+            />
             <p>{vote}</p>
-            <ThumbDownIcon onClick={(e) => setVote(vote - 1)} />
+            <ThumbDownIcon
+              data-testid="down-arrow"
+              onClick={(e) => setVote(vote - 1)}
+            />
           </div>
         </div>
         <div className={styles.content}>
@@ -90,13 +95,12 @@ export const PostView = ({
             </Typography>
             <Typography
               className={classes.pos}
-              nowrap={true}
               color="textSecondary"
               gutterBottom
             >
               {/* {selftext} */}
 
-              <div
+              <span
                 dangerouslySetInnerHTML={createMarkup(
                   entities.decode(selftext_html)
                 )}

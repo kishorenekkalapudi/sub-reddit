@@ -2,7 +2,7 @@ import React from "react";
 import Grid from "@material-ui/core/Grid";
 import { makeStyles } from "@material-ui/core/styles";
 import { PostView } from "../common/postView";
-import { PostComments } from "../common/postComment";
+import PostComments from "../common/postComment";
 import Header from "../header";
 
 const useStyles = makeStyles((theme) => ({

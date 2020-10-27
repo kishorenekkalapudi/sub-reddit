@@ -17,49 +17,42 @@ const useStyles = makeStyles((theme) => ({
     color: theme.palette.text.secondary,
   },
 }));
-const replieComments = (children) => {
-  const classes = useStyles();
-
-  // let content;
+export function replieComments(children) {
   if (children) {
-    console.log(children);
-    return children?.map((comment) => (
-      <div key={comment.created_utc} className={styles.postWrapper}>
-        <div className={styles.voting}>
-          <div>
-            <ArrowUpwardIcon style={{ height: ".5em" }} />
-            <div>{comment.vote}</div>
-            <ArrowDownwardIcon style={{ height: ".5em" }} />
-          </div>
-          <i className={styles.threadline}></i>
-        </div>
-        <div className={styles.content}>
-          <div
-            style={{ paddingLeft: "20px" }}
-            className={styles.replieComments}
-            color="textSecondary"
-            gutterBottom
-          >
+    return children?.map((comment) => {
+      return (
+        <div key={comment.data.created_utc} className={styles.postWrapper}>
+          <div className={styles.voting}>
             <div>
-              {comment.data.author} {comment.data.score} points{" "}
+              <ArrowUpwardIcon style={{ height: ".5em" }} />
+              <div>{comment.data.vote}</div>
+              <ArrowDownwardIcon style={{ height: ".5em" }} />
             </div>
-            {comment.data.body}
+            <i className={styles.threadline}></i>
+          </div>
+          <div className={styles.content}>
+            <div
+              style={{ paddingLeft: "20px" }}
+              className={styles.replieComments}
+              color="textSecondary"
+            >
+              <div>
+                {comment.data.author} {comment.data.score} points{" "}
+              </div>
+              {comment.data.body}
 
-            {replieComments(
-              comment.data.replies && comment.data.replies.data.children
-            )}
+              {replieComments(comment.data.replies?.data?.children)}
+            </div>
           </div>
         </div>
-      </div>
-    ));
+      );
+    });
   } else {
     return;
   }
-};
+}
 
-export const PostComments = ({ children }) => {
-  console.log(JSON.stringify(children, null, 4));
-
+const PostComments = ({ children }) => {
   const classes = useStyles();
   const comments = replieComments(children);
   return (
@@ -77,3 +70,5 @@ export const PostComments = ({ children }) => {
     </Card>
   );
 };
+
+export default PostComments;

@@ -2,7 +2,7 @@ import React from "react";
 // Using render and screen from test-utils.js instead of
 // @testing-library/react
 import { render, screen } from "../../test-utils";
-import SubHeader from "../../../src/components/subHeader";
+import SubHeader, { getImage } from "../../../src/components/subHeader";
 
 const about = {
   src:
@@ -12,6 +12,10 @@ const about = {
 };
 
 describe("Sub header", () => {
+  it("getImage with & replacemt", () => {
+    const img = getImage("&amp;");
+    expect(img).toEqual("&");
+  });
   it("should render the  sub header", () => {
     render(<SubHeader about={about} />);
     //screen.debug();

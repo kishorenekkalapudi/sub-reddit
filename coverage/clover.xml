@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1603827267615" clover="3.2.0">
-  <project timestamp="1603827267616" name="All files">
-    <metrics statements="26" coveredstatements="15" conditionals="5" coveredconditionals="2" methods="12" coveredmethods="7" elements="43" coveredelements="24" complexity="0" loc="26" ncloc="26" packages="5" files="7" classes="7"/>
+<coverage generated="1603835029835" clover="3.2.0">
+  <project timestamp="1603835029835" name="All files">
+    <metrics statements="32" coveredstatements="31" conditionals="9" coveredconditionals="8" methods="16" coveredmethods="15" elements="57" coveredelements="54" complexity="0" loc="32" ncloc="32" packages="5" files="8" classes="8"/>
     <package name="__test__">
       <metrics statements="4" coveredstatements="4" conditionals="1" coveredconditionals="1" methods="2" coveredmethods="2"/>
       <file name="test-utils.js" path="/Users/knekkal/Desktop/sub-reddit/__test__/test-utils.js">
         <metrics statements="4" coveredstatements="4" conditionals="1" coveredconditionals="1" methods="2" coveredmethods="2"/>
-        <line num="6" count="5" type="stmt"/>
+        <line num="6" count="6" type="stmt"/>
         <line num="7" count="6" type="stmt"/>
-        <line num="10" count="5" type="cond" truecount="1" falsecount="0"/>
-        <line num="11" count="5" type="stmt"/>
+        <line num="10" count="6" type="cond" truecount="1" falsecount="0"/>
+        <line num="11" count="6" type="stmt"/>
       </file>
     </package>
     <package name="__test__.data">
@@ -27,7 +27,7 @@
       </file>
     </package>
     <package name="src.components">
-      <metrics statements="5" coveredstatements="5" conditionals="2" coveredconditionals="1" methods="3" coveredmethods="3"/>
+      <metrics statements="6" coveredstatements="6" conditionals="2" coveredconditionals="2" methods="4" coveredmethods="4"/>
       <file name="header.jsx" path="/Users/knekkal/Desktop/sub-reddit/src/components/header.jsx">
         <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
         <line num="9" count="1" type="stmt"/>
@@ -35,33 +35,42 @@
         <line num="25" count="1" type="stmt"/>
       </file>
       <file name="subHeader.jsx" path="/Users/knekkal/Desktop/sub-reddit/src/components/subHeader.jsx">
-        <metrics statements="2" coveredstatements="2" conditionals="2" coveredconditionals="1" methods="1" coveredmethods="1"/>
+        <metrics statements="3" coveredstatements="3" conditionals="2" coveredconditionals="2" methods="2" coveredmethods="2"/>
         <line num="5" count="1" type="stmt"/>
-        <line num="8" count="1" type="stmt"/>
+        <line num="8" count="2" type="cond" truecount="2" falsecount="0"/>
+        <line num="12" count="1" type="stmt"/>
       </file>
     </package>
     <package name="src.components.common">
-      <metrics statements="15" coveredstatements="4" conditionals="2" coveredconditionals="0" methods="6" coveredmethods="1"/>
+      <metrics statements="20" coveredstatements="19" conditionals="6" coveredconditionals="5" methods="9" coveredmethods="8"/>
       <file name="about.jsx" path="/Users/knekkal/Desktop/sub-reddit/src/components/common/about.jsx">
         <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
         <line num="5" count="1" type="stmt"/>
       </file>
       <file name="postComment.jsx" path="/Users/knekkal/Desktop/sub-reddit/src/components/common/postComment.jsx">
-        <metrics statements="14" coveredstatements="3" conditionals="2" coveredconditionals="0" methods="5" coveredmethods="0"/>
+        <metrics statements="9" coveredstatements="9" conditionals="2" coveredconditionals="2" methods="4" coveredmethods="4"/>
         <line num="9" count="1" type="stmt"/>
-        <line num="20" count="1" type="stmt"/>
-        <line num="21" count="0" type="stmt"/>
-        <line num="24" count="0" type="cond" truecount="0" falsecount="2"/>
-        <line num="25" count="0" type="stmt"/>
-        <line num="26" count="0" type="stmt"/>
-        <line num="27" count="0" type="stmt"/>
-        <line num="54" count="0" type="stmt"/>
+        <line num="21" count="7" type="cond" truecount="2" falsecount="0"/>
+        <line num="22" count="3" type="stmt"/>
+        <line num="23" count="4" type="stmt"/>
+        <line num="51" count="4" type="stmt"/>
+        <line num="55" count="1" type="stmt"/>
+        <line num="56" count="1" type="stmt"/>
+        <line num="57" count="1" type="stmt"/>
         <line num="58" count="1" type="stmt"/>
-        <line num="59" count="0" type="stmt"/>
-        <line num="61" count="0" type="stmt"/>
-        <line num="63" count="0" type="stmt"/>
-        <line num="64" count="0" type="stmt"/>
-        <line num="92" count="0" type="stmt"/>
+      </file>
+      <file name="postView.jsx" path="/Users/knekkal/Desktop/sub-reddit/src/components/common/postView.jsx">
+        <metrics statements="10" coveredstatements="9" conditionals="4" coveredconditionals="3" methods="4" coveredmethods="3"/>
+        <line num="8" count="1" type="stmt"/>
+        <line num="9" count="1" type="stmt"/>
+        <line num="15" count="1" type="stmt"/>
+        <line num="41" count="2" type="stmt"/>
+        <line num="44" count="1" type="stmt"/>
+        <line num="53" count="2" type="stmt"/>
+        <line num="54" count="2" type="stmt"/>
+        <line num="55" count="2" type="stmt"/>
+        <line num="65" count="1" type="stmt"/>
+        <line num="70" count="0" type="stmt"/>
       </file>
     </package>
   </project>
