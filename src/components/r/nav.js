@@ -1,12 +1,12 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { makeStyles } from '@material-ui/core/styles';
-import AppBar from '@material-ui/core/AppBar';
-import Tabs from '@material-ui/core/Tabs';
-import Tab from '@material-ui/core/Tab';
-import Typography from '@material-ui/core/Typography';
-import Box from '@material-ui/core/Box';
-import Post from './post'
+import React from "react";
+import PropTypes from "prop-types";
+import { makeStyles } from "@material-ui/core/styles";
+import AppBar from "@material-ui/core/AppBar";
+import Tabs from "@material-ui/core/Tabs";
+import Tab from "@material-ui/core/Tab";
+import Typography from "@material-ui/core/Typography";
+import Box from "@material-ui/core/Box";
+import Post from "./post";
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -37,20 +37,19 @@ TabPanel.propTypes = {
 function a11yProps(index) {
   return {
     id: `scrollable-auto-tab-${index}`,
-    'aria-controls': `scrollable-auto-tabpanel-${index}`,
+    "aria-controls": `scrollable-auto-tabpanel-${index}`,
   };
 }
 
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
-    width: '100%',
+    width: "100%",
     backgroundColor: theme.palette.background.paper,
   },
 }));
 
-export default function ScrollableTabsButtonAuto({path}) {
-
+export default function ScrollableTabsButtonAuto({ path }) {
   const classes = useStyles();
   const [value, setValue] = React.useState(0);
 
@@ -59,7 +58,7 @@ export default function ScrollableTabsButtonAuto({path}) {
   };
 
   return (
-    <div className={classes.root} style={{minWidth:'310px'}}>
+    <div className={classes.root} style={{ minWidth: "310px" }}>
       <AppBar position="static" color="default">
         <Tabs
           value={value}
@@ -74,22 +73,20 @@ export default function ScrollableTabsButtonAuto({path}) {
           <Tab label="Hot" {...a11yProps(1)} />
           <Tab label="New" {...a11yProps(2)} />
           <Tab label="Top" {...a11yProps(3)} />
-
         </Tabs>
       </AppBar>
       <TabPanel value={value} index={0}>
-        <Post path={path} sort=''/>
+        <Post path={path} sort="" />
       </TabPanel>
       <TabPanel value={value} index={1}>
-      <Post path={path} sort='hot'/>
+        <Post path={path} sort="hot" />
       </TabPanel>
       <TabPanel value={value} index={2}>
-      <Post path={path} sort='new'/>
+        <Post path={path} sort="new" />
       </TabPanel>
       <TabPanel value={value} index={3}>
-      <Post path={path} sort='top'/>
+        <Post path={path} sort="top" />
       </TabPanel>
-
     </div>
   );
 }

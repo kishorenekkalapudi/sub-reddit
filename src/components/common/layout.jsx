@@ -1,11 +1,10 @@
-import React, { Fragment } from 'react';
-import Grid from '@material-ui/core/Grid';
-import { makeStyles } from '@material-ui/core/styles';
-import Nav from '../r/nav'
-import About from './about';
-import Header from '../header'
-import SubHeader  from '../subHeader'
-
+import React, { Fragment } from "react";
+import Grid from "@material-ui/core/Grid";
+import { makeStyles } from "@material-ui/core/styles";
+import Nav from "../r/nav";
+import About from "./about";
+import Header from "../header";
+import SubHeader from "../subHeader";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -13,33 +12,31 @@ const useStyles = makeStyles((theme) => ({
   },
   paper: {
     padding: theme.spacing(2),
-    textAlign: 'center',
+    textAlign: "center",
     color: theme.palette.text.secondary,
   },
 }));
 
-
-const Layout = (props) =>{
+const Layout = (props) => {
   console.log(props);
-    const classes = useStyles();
+  const classes = useStyles();
 
-return <div className={classes.root}>
-<Header/>
-{
-  (props.type==='user')?<Fragment></Fragment>:<SubHeader {...props}/>
-}
+  return (
+    <div className={classes.root}>
+      <Header />
+      {props.type === "user" ? <Fragment></Fragment> : <SubHeader {...props} />}
 
-<Grid container  xs={12} md={12}>
-    <Grid item xs={0} md={2}></Grid>
-    <Grid item  xs={12} md={6} >
-    <Nav  path={props.path}/>
-    </Grid>
-    <Grid item  xs={12} md={2} >
-        <About {...props}/>
-    </Grid>
-    <Grid item xs={0} md={2}></Grid>
-
-</Grid>
-</div>
-}
+      <Grid container xs={12} md={12}>
+        <Grid item xs={0} md={2}></Grid>
+        <Grid item xs={12} md={6}>
+          <Nav path={props.path} />
+        </Grid>
+        <Grid item xs={12} md={2}>
+          <About {...props} />
+        </Grid>
+        <Grid item xs={0} md={2}></Grid>
+      </Grid>
+    </div>
+  );
+};
 export default Layout;
