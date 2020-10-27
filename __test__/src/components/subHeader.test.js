@@ -12,13 +12,20 @@ const about = {
 };
 
 describe("Sub header", () => {
-  it("should render the header", () => {
-    render(<SubHeader about />);
+  it("should render the  sub header", () => {
+    render(<SubHeader about={about} />);
+    //screen.debug();
 
-    const heading = screen(/nextjs/i);
+    const heading = screen.getByText("Join");
+    const title = screen.getByText("nextjs");
+    const des = screen.getByText("r/nextjs");
+    const img = screen.getByAltText("sub header image");
 
     // we can only use toBeInTheDocument because it was imported
     // in the jest.setup.js and configured in jest.config.js
     expect(heading).toBeInTheDocument();
+    expect(title).toBeInTheDocument();
+    expect(des).toBeInTheDocument();
+    expect(img).toBeInTheDocument();
   });
 });

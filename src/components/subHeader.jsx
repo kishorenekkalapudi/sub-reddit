@@ -12,12 +12,13 @@ export default function ButtonAppBar({ about }) {
       <div className={styles.div3}>
         <div className={styles.flexContainer}>
           <img
+            alt="sub header image"
             src={
               about.community_icon
                 ? about.community_icon.replace("&amp;", "&")
                 : defaultImage
             }
-            class={styles.image}
+            className={styles.image}
           />
           <div>
             <div className={styles.titleDetails}>

@@ -41,8 +41,7 @@
     "dev": "next",
     "build": "next build",
     "start": "next start",
-    "test": "jest",
+    "test": "jest --collect-coverage",
     "format": "prettier \"src/**/*.{js,jsx,html}\" --write"
-
   }
 }

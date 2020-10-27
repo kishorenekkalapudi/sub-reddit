@@ -1,9 +1,7 @@
 import React, { Fragment, useState, useEffect } from "react";
 import Card from "@material-ui/core/Card";
-import CardContent from "@material-ui/core/CardContent";
 import { makeStyles } from "@material-ui/core/styles";
 
-import Typography from "@material-ui/core/Typography";
 import styles from "../postComment.module.scss";
 import ArrowDownwardIcon from "@material-ui/icons/ArrowDownward";
 import ArrowUpwardIcon from "@material-ui/icons/ArrowUpward";
@@ -19,14 +17,14 @@ const useStyles = makeStyles((theme) => ({
     color: theme.palette.text.secondary,
   },
 }));
-const replieComments = (replies) => {
+const replieComments = (children) => {
   const classes = useStyles();
 
   // let content;
-  if (replies) {
-    console.log(replies);
-    return replies.data.children?.map((comment) => (
-      <div className={styles.postWrapper}>
+  if (children) {
+    console.log(children);
+    return children?.map((comment) => (
+      <div key={comment.created_utc} className={styles.postWrapper}>
         <div className={styles.voting}>
           <div>
             <ArrowUpwardIcon style={{ height: ".5em" }} />
@@ -47,7 +45,9 @@ const replieComments = (replies) => {
             </div>
             {comment.data.body}
 
-            {replieComments(comment.data.replies)}
+            {replieComments(
+              comment.data.replies && comment.data.replies.data.children
+            )}
           </div>
         </div>
       </div>
@@ -58,37 +58,10 @@ const replieComments = (replies) => {
 };
 
 export const PostComments = ({ children }) => {
+  console.log(JSON.stringify(children, null, 4));
+
   const classes = useStyles();
-
-  const comments = children.map((comment) => {
-    return (
-      <div className={styles.postWrapper}>
-        <div className={styles.voting}>
-          <div>
-            <ArrowUpwardIcon style={{ height: ".5em" }} />
-            <div>{comment.vote}</div>
-            <ArrowDownwardIcon style={{ height: ".5em" }} />
-          </div>
-        </div>
-        <div className={styles.content}>
-          <div
-            style={{ paddingLeft: "20px" }}
-            className={styles.replieComments}
-            color="textSecondary"
-            gutterBottom
-          >
-            <div>
-              {comment.data.author} {comment.data.score} points{" "}
-            </div>
-            {comment.data.body}
-
-            {replieComments(comment.data.replies)}
-          </div>
-        </div>
-      </div>
-    );
-  });
-
+  const comments = replieComments(children);
   return (
     <Card
       style={{
