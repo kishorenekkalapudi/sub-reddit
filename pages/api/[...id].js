@@ -5,7 +5,6 @@ const handler = nc()
   // use connect based middleware
   // express like routing for methods
   .get(async (req, res) => {
-    console.log("req:" + `${API_URL}/${req.query.id.join("/")}`);
     const data = await fetch(`${API_URL}/${req.query.id.join("/")}`);
     const posts = await data.json();
 

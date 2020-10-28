@@ -5,6 +5,7 @@ import Nav from "../r/nav";
 import About from "./about";
 import Header from "../header";
 import SubHeader from "../subHeader";
+import AboutUser from "./aboutUser";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -32,7 +33,11 @@ const Layout = (props) => {
           <Nav path={props.path} />
         </Grid>
         <Grid item xs={12} md={2}>
-          <About {...props} />
+          {props.type === "user" ? (
+            <AboutUser {...props} />
+          ) : (
+            <About {...props} />
+          )}
         </Grid>
         <Grid item xs={0} md={2}></Grid>
       </Grid>

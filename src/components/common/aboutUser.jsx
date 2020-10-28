@@ -1,25 +1,40 @@
+import { AmpStories, Style } from "@material-ui/icons";
 import React from "react";
-import Box from "@material-ui/core/Box";
-import { makeStyles } from "@material-ui/core/styles";
 
 import styles from "../about.module.scss";
+import { getImage } from "../subHeader";
+import Avatar from "@material-ui/core/Avatar";
+import AcUnitIcon from "@material-ui/icons/AcUnit";
 
 export default function Display({ about }) {
   console.log(about);
   return (
     <div className={styles.about}>
-      <div className={styles.header}>About Community </div>
+      <div
+        className={styles.header}
+        style={{
+          backgroundImage: `url(${getImage(about?.subreddit.banner_img)})`,
+        }}
+      ></div>
+      <div className={styles.avatar}>
+        <Avatar
+          variant="square"
+          alt="Remy Sharp"
+          src={getImage(about.icon_img)}
+          className={styles.large}
+          style={{ width: "60px", height: "auto" }}
+        />
+
+        <div>{about.name}</div>
+      </div>
       <div className={styles.content}>
-        {about?.public_description}
         <div className={styles.members}>
           <div className={styles.box}>
-            <div className={styles.total}>309k</div>
-            <p className={styles.text}>Members</p>
-          </div>
-
-          <div className={styles.box}>
-            <div className={styles.total}>9.7k</div>
-            <p className={styles.text}>Online</p>
+            <p className={styles.text}>Karma</p>
+            <div className={styles.total}>
+              <AcUnitIcon color="primary" />
+              {about.total_karma}
+            </div>
           </div>
         </div>
       </div>

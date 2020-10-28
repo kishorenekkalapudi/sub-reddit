@@ -5,9 +5,9 @@ const entities = new Entities();
 
 import { PostView } from "../common/postView";
 
-export default function SimpleCard({ path, sort }) {
+export default function Post({ path, sort }) {
   const router = useRouter();
-  const { id } = router.query;
+  const { id } = router?.query;
 
   if (path) {
     path = sort ? `${path}.json?sort=${sort}` : `${path}.json`;
@@ -23,7 +23,6 @@ export default function SimpleCard({ path, sort }) {
     fetch(`/api${path}`)
       .then((posts) => posts.json())
       .then((posts) => {
-        console.log(posts.data.children);
         setPosts(posts.data.children);
       });
   }, []);
@@ -31,13 +30,15 @@ export default function SimpleCard({ path, sort }) {
   return (
     <Fragment>
       {posts.map((post) => {
+        console.log(post);
+
         if (path.includes("/user/")) {
           post.data.url = post.data.link_permalink;
           post.data.title = post.data.link_title;
           post.data.selftext_html = post.data.body_html;
           post.data.url = post.data.link_url;
         }
-        return <PostView {...post.data} />;
+        return <PostView key={post.data.link_permalink} {...post.data} />;
       })}
     </Fragment>
   );

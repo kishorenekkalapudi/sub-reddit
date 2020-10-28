@@ -11,6 +11,7 @@ import ThumbUpAltIcon from "@material-ui/icons/ThumbUpAlt";
 import ThumbDownIcon from "@material-ui/icons/ThumbDown";
 import styles from "../postview.module.scss";
 import ChatBubbleOutlineIcon from "@material-ui/icons/ChatBubbleOutline";
+import moment from "moment";
 
 const useStyles = makeStyles({
   root: {
@@ -38,7 +39,16 @@ const useStyles = makeStyles({
 });
 
 function createMarkup(markup) {
+  markup = markup.replace("<!-- SC_OFF -->", "");
+  markup = markup.replace("<!-- SC_ON -->", "");
   return { __html: markup };
+}
+export function getElememt(url, classes) {
+  return url && url.includes(".jpg") ? (
+    <img className={classes.responsive} src={url} />
+  ) : (
+    <div />
+  );
 }
 
 export const PostView = ({
@@ -49,6 +59,8 @@ export const PostView = ({
   url,
   num_comments,
   score,
+  created,
+  created_utc,
 }) => {
   const classes = useStyles();
   const [vote, setVote] = useState(score);
@@ -78,7 +90,8 @@ export const PostView = ({
               color="textSecondary"
               gutterBottom
             >
-              Posted <a href={`/user/${author}`}> byu/{author}</a>
+              Posted <a href={`/user/${author}`}> byu/{author}</a>{" "}
+              {moment.unix(created_utc).utc().fromNow()}
             </Typography>
             <Typography
               className={classes.links}
@@ -105,11 +118,7 @@ export const PostView = ({
                   entities.decode(selftext_html)
                 )}
               />
-              {url && url.includes(".jpg") ? (
-                <img className={classes.responsive} src={url} />
-              ) : (
-                <div />
-              )}
+              {getElememt(url, classes)}
             </Typography>
           </CardContent>
         </div>
