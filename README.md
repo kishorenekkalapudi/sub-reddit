@@ -21,5 +21,5 @@ $ npm run test
 
 ## Links
 
-<a href="https://sub-reddit-git-main.knekkala.vercel.app/r/javascript"> javascript sub reddit page</a>
-
+http://localhost:3000/r/nextjs
+http://localhost:3000/r/javascrpit
