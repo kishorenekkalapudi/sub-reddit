@@ -24,14 +24,14 @@ export default function Display({ about }) {
           style={{ width: "60px", height: "auto", verticalAlign: "middle" }}
         />
 
-        <div>{about.name}</div>
+        <div className={styles.name}>{about.name}</div>
       </div>
       <div className={styles.content}>
         <div className={styles.members}>
           <div className={styles.box}>
             <p className={styles.text}>Karma</p>
             <div className={styles.total}>
-              <AcUnitIcon color="primary" />
+              <AcUnitIcon color="primary" className={styles.icon} />
               {about.total_karma}
             </div>
           </div>

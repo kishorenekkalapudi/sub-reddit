@@ -45,7 +45,6 @@ function renderpost(PostData, dataOrder) {
               style={{
                 margin: "20px",
                 border: "1px solid #ccc",
-                minWidth: "280px",
               }}
               className={styles.root}
             >
@@ -74,6 +73,7 @@ function renderpost(PostData, dataOrder) {
 }
 
 const PNC = ({ posts }) => {
+  console.log(JSON.stringify(posts, null, 4));
   const [PostData, dataOrder] = mapData(posts);
   const html = renderpost(PostData, dataOrder);
 
@@ -91,7 +91,7 @@ function createMarkup(markup) {
 function UserCommentView({ data }) {
   return (
     <Card
-      style={{ margin: "20px", border: "1px solid #ccc", minWidth: "280px" }}
+      style={{ margin: "20px", border: "1px solid #ccc" }}
       className={styles.root}
     >
       <div className={styles.post}>
@@ -107,7 +107,7 @@ function UserCommentView({ data }) {
 function UserPostCommentView({ data }) {
   return (
     <Card
-      style={{ margin: "20px", border: "1px solid #ccc", minWidth: "280px" }}
+      style={{ margin: "20px", border: "1px solid #ccc" }}
       className={styles.root}
     >
       {getCommentView(data)}

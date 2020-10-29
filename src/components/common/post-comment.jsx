@@ -66,7 +66,6 @@ const PostComments = ({ children }) => {
         margin: "20px",
         border: "1px solid #ccc",
         paddingTop: "10px",
-        minWidth: "280px",
       }}
       className={classes.root}
     >

@@ -3,13 +3,14 @@ module.exports = {
   moduleNameMapper: {
     "\\.(scss|sass|css)$": "identity-obj-proxy",
   },
-  reporters: [
-    "default",
-    [
-      "./node_modules/jest-html-reporter",
-      {
-        pageTitle: "Test Report",
-      },
-    ],
-  ],
+  // modulePathIgnorePatterns: ["src/components/r"],
+  // reporters: [
+  //   "default",
+  //   [
+  //     "./node_modules/jest-html-reporter",
+  //     {
+  //       pageTitle: "Test Report",
+  //     },
+  //   ],
+  // ],
 };
