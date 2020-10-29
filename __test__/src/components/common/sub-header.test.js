@@ -1,8 +1,10 @@
 import React from "react";
 // Using render and screen from test-utils.js instead of
 // @testing-library/react
-import { render, screen } from "../../test-utils";
-import SubHeader, { getImage } from "../../../src/components/subHeader";
+import { render, screen } from "../../../test-utils";
+import SubHeader, {
+  getImage,
+} from "../../../../src/components/common/sub-header";
 
 const about = {
   src:

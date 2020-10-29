@@ -59,8 +59,8 @@ export const PostView = ({
   url,
   num_comments,
   score,
-  created,
   created_utc,
+  userCommentElement,
 }) => {
   const classes = useStyles();
   const [vote, setVote] = useState(score);
@@ -128,6 +128,7 @@ export const PostView = ({
         <Button size="small">Share</Button>
         <ChatBubbleOutlineIcon /> <p>{num_comments} comments</p>
       </CardActions>
+      {userCommentElement}
     </Card>
   );
 };

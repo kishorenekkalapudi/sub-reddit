@@ -1,9 +1,9 @@
 import React from "react";
 import Grid from "@material-ui/core/Grid";
 import { makeStyles } from "@material-ui/core/styles";
-import { PostView } from "../common/postView";
-import PostComments from "../common/postComment";
-import Header from "../header";
+import { PostView } from "../common/post-view";
+import PostComments from "../common/post-comment";
+import Header from "../common/header";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -17,7 +17,6 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const Layout = (props) => {
-  console.log(props);
   const classes = useStyles();
 
   return (

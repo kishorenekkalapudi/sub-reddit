@@ -3,9 +3,9 @@ import Grid from "@material-ui/core/Grid";
 import { makeStyles } from "@material-ui/core/styles";
 import Nav from "../r/nav";
 import About from "./about";
-import Header from "../header";
-import SubHeader from "../subHeader";
-import AboutUser from "./aboutUser";
+import Header from "./header";
+import SubHeader from "./sub-header";
+import AboutUser from "./about-user";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -19,7 +19,6 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const Layout = (props) => {
-  console.log(props);
   const classes = useStyles();
 
   return (

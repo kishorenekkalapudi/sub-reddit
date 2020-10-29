@@ -4,8 +4,8 @@ import React from "react";
 import { render, screen } from "../../../test-utils";
 import PostComment, {
   replieComments,
-} from "../../../../src/components/common/postComment";
-import { data } from "../../../data/postComments";
+} from "../../../../src/components/common/post-comment";
+import { data } from "../../../data/post-comments";
 
 describe("Sub header", () => {
   it("testing without comments  ", () => {

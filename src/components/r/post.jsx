@@ -2,8 +2,9 @@ import React, { Fragment, useState, useEffect } from "react";
 import { useRouter } from "next/router";
 const Entities = require("html-entities").XmlEntities;
 const entities = new Entities();
+import PNC from "../common/user-post-comments";
 
-import { PostView } from "../common/postView";
+import { PostView } from "../common/post-view";
 
 export default function Post({ path, sort }) {
   const router = useRouter();
@@ -16,8 +17,6 @@ export default function Post({ path, sort }) {
     path = sort ? `${path}/${sort}.json` : `${path}.json`;
   }
 
-  console.log(path);
-
   const [posts, setPosts] = useState([]);
   useEffect(() => {
     fetch(`/api${path}`)
@@ -29,17 +28,13 @@ export default function Post({ path, sort }) {
 
   return (
     <Fragment>
-      {posts.map((post) => {
-        console.log(post);
-
-        if (path.includes("/user/")) {
-          post.data.url = post.data.link_permalink;
-          post.data.title = post.data.link_title;
-          post.data.selftext_html = post.data.body_html;
-          post.data.url = post.data.link_url;
-        }
-        return <PostView key={post.data.link_permalink} {...post.data} />;
-      })}
+      {path.includes("/user/") ? (
+        <PNC posts={posts} />
+      ) : (
+        posts.map((post) => {
+          return <PostView key={post.data.link_permalink} {...post.data} />;
+        })
+      )}
     </Fragment>
   );
 }

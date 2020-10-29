@@ -1,8 +1,8 @@
 import React from "react";
 // Using render and screen from test-utils.js instead of
 // @testing-library/react
-import { render, screen } from "../../test-utils";
-import Header from "../../../src/components/header";
+import { render, screen } from "../../../test-utils";
+import Header from "../../../../src/components/common/header";
 
 describe("header", () => {
   it("should render the header", () => {

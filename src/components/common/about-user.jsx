@@ -2,12 +2,11 @@ import { AmpStories, Style } from "@material-ui/icons";
 import React from "react";
 
 import styles from "../about.module.scss";
-import { getImage } from "../subHeader";
+import { getImage } from "./sub-header";
 import Avatar from "@material-ui/core/Avatar";
 import AcUnitIcon from "@material-ui/icons/AcUnit";
 
 export default function Display({ about }) {
-  console.log(about);
   return (
     <div className={styles.about}>
       <div
@@ -22,7 +21,7 @@ export default function Display({ about }) {
           alt="Remy Sharp"
           src={getImage(about.icon_img)}
           className={styles.large}
-          style={{ width: "60px", height: "auto" }}
+          style={{ width: "60px", height: "auto", verticalAlign: "middle" }}
         />
 
         <div>{about.name}</div>

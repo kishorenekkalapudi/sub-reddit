@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "./subHeader.module.scss";
+import styles from "../subHeader.module.scss";
 import Button from "@material-ui/core/Button";
 const defaultImage =
   "https://styles.redditmedia.com/t5_2tk95/styles/communityIcon_hrq90p2z27k11.jpg?width=256&format=pjpg&s=adbf89b8f1cd7c19f29cfc9b3680c6eb35542a9d";
