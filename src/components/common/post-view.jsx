@@ -45,7 +45,7 @@ function createMarkup(markup) {
 }
 export function getElememt(url, classes) {
   return url && url.includes(".jpg") ? (
-    <img className={classes.responsive} src={url} />
+    <img style={{ width: "100%", height: "auto" }} src={url} />
   ) : (
     <div />
   );
