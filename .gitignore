@@ -5,4 +5,5 @@ public
 .env
 coverage
 test-report.html
-__test/data
+__test__/data
+coverage
