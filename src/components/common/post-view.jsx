@@ -66,7 +66,7 @@ export const PostView = ({
   const [vote, setVote] = useState(score);
   return (
     <Card
-      style={{ margin: "20px", border: "1px solid #ccc" }}
+      style={{ margin: "20px 0 0 0", border: "1px solid #ccc" }}
       className={classes.root}
     >
       <div className={styles.postWrapper}>

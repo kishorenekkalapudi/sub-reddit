@@ -14,7 +14,7 @@ describe("Sub header", () => {
   });
   it("testing comments  comments", () => {
     const comments = replieComments(data);
-    expect(comments.length).toEqual(2);
+    expect(comments.length).toEqual(3);
   });
 
   it("should render the  sub header", () => {

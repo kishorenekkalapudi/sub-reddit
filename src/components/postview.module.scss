@@ -1,12 +1,13 @@
-
-  .postWrapper{
-    display: grid;
-    grid-template-columns: 1fr 11fr;
-    grid-template-rows: 1fr;
-    gap: 0px 0px
-  }
-  .voting { 
-      grid-area: 1 / 1 / 2 / 3;
-      padding: .5em;
-     }
-.content { grid-area: 1 / 2 / 2 / 3 }
+.postWrapper {
+  display: grid;
+  grid-template-columns: 1fr 11fr;
+  grid-template-rows: 1fr;
+  gap: 0px 0px;
+}
+.voting {
+  grid-area: 1 / 1 / 2 / 3;
+  padding: 0.5em;
+}
+.content {
+  grid-area: 1 / 2 / 2 / 3;
+}

@@ -1,8 +1,12 @@
 import React from "react";
 // Using render and screen from test-utils.js instead of
 // @testing-library/react
-import { render, screen } from "../../../test-utils";
-import { PostView } from "../../../../src/components/common/post-view";
+import { render, screen, fireEvent } from "../../../test-utils";
+import {
+  PostView,
+  getElememt,
+} from "../../../../src/components/common/post-view";
+import moment from "moment";
 
 const data = {
   author: "audrician25ss",
@@ -15,14 +19,15 @@ const data = {
   created_utc: 1603898331,
 };
 
-describe("Sub header", () => {
-  it("should render the  sub header", () => {
+const timeFromNow = moment.unix(data.created_utc).utc().fromNow();
+describe("Post View", () => {
+  it("should render the  Post view", () => {
     render(<PostView {...data} />);
     //screen.debug();
 
     const votes = screen.getByText("144");
     const user = screen.getByText(/audrician25ss/i);
-    const time = screen.getByText(/12 hours ago/i);
+    const time = screen.getByText(timeFromNow, { exact: false });
     const title = screen.getByText(/Simplest JS paint/i);
 
     const comments = screen.getByText(/5 comments/i);
@@ -34,5 +39,27 @@ describe("Sub header", () => {
     expect(time).toBeInTheDocument();
     expect(title).toBeInTheDocument();
     expect(comments).toBeInTheDocument();
+  });
+  it("get element fn return img tag ", () => {
+    const html = getElememt("https://hinty.io/devforth/simplest-js-paint.jpg");
+    expect(html.type).toEqual("img");
+  });
+  it("get element fn return div tag ", () => {
+    const html = getElememt("https://hinty.io/devforth/simplest-js-paint");
+    expect(html.type).toEqual("div");
+  });
+  it("increments like", () => {
+    const { getByTestId } = render(<PostView {...data} />);
+    fireEvent.click(getByTestId("up-arrow"));
+    const like = screen.getByText(/145/i);
+
+    expect(like).toBeInTheDocument();
+  });
+  it("decerment  like", () => {
+    const { getByTestId } = render(<PostView {...data} />);
+    fireEvent.click(getByTestId("down-arrow"));
+    const like = screen.getByText(/143/i);
+
+    expect(like).toBeInTheDocument();
   });
 });

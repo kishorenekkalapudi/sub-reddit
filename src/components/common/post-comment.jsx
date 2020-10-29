@@ -1,4 +1,4 @@
-import React, { Fragment, useState, useEffect } from "react";
+import React from "react";
 import Card from "@material-ui/core/Card";
 import { makeStyles } from "@material-ui/core/styles";
 
@@ -22,7 +22,7 @@ export function replieComments(children) {
   if (children) {
     return children?.map((comment) => {
       if (comment.kind === "more") {
-        return;
+        return <div></div>;
       } else
         return (
           <div key={comment.data.created_utc} className={styles.postWrapper}>
@@ -45,7 +45,6 @@ export function replieComments(children) {
                   {moment.unix(comment.data.created_utc).utc().fromNow()}
                 </div>
                 {comment.data.body}
-
                 {replieComments(comment.data.replies?.data?.children)}
               </div>
             </div>
@@ -63,7 +62,7 @@ const PostComments = ({ children }) => {
   return (
     <Card
       style={{
-        margin: "20px",
+        margin: "20px 0 0 0",
         border: "1px solid #ccc",
         paddingTop: "10px",
       }}
