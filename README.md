@@ -16,7 +16,7 @@ $ npm run build
 
 $ npm run start
 
-$ npm run test
+$ npm run test // few test won't work beacause test-data is been .gitignored 
 ```
 
 ## Links
