@@ -22,4 +22,3 @@ $ npm run test // few test won't work beacause test-data is been .gitignored
 ## Links
 
 http://localhost:3000/r/nextjs
-http://localhost:3000/r/javascrpit
