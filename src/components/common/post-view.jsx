@@ -12,6 +12,7 @@ import ThumbDownIcon from "@material-ui/icons/ThumbDown";
 import styles from "../postview.module.scss";
 import ChatBubbleOutlineIcon from "@material-ui/icons/ChatBubbleOutline";
 import moment from "moment";
+import Link from "next/link";
 
 const useStyles = makeStyles({
   root: {
@@ -90,7 +91,10 @@ export const PostView = ({
               color="textSecondary"
               gutterBottom
             >
-              Posted <a href={`/user/${author}`}> byu/{author}</a>{" "}
+              Posted{" "}
+              <Link href={`/user/${author}`}>
+                <a> byu/{author}</a>
+              </Link>{" "}
               {moment.unix(created_utc).utc().fromNow()}
             </Typography>
             <Typography
@@ -98,13 +102,17 @@ export const PostView = ({
               color="textSecondary"
               gutterBottom
             >
-              <a
-                style={{ color: "rgba(0, 0, 0, 0.54)", textDecoration: "none" }}
-                className={classes.link}
-                href={permalink}
-              >
-                {title}
-              </a>
+              <Link href={permalink}>
+                <a
+                  style={{
+                    color: "rgba(0, 0, 0, 0.54)",
+                    textDecoration: "none",
+                  }}
+                  className={classes.link}
+                >
+                  {title}
+                </a>
+              </Link>
             </Typography>
             <Typography
               className={classes.pos}
