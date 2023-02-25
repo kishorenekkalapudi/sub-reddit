@@ -25,7 +25,7 @@ export async function getServerSideProps({ params, req, res }) {
 
   const about = await about_data.json();
 
-  const data = {};
+  let data = {};
   data.about = about.data;
 
   return {
